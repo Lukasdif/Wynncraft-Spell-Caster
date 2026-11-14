@@ -14,5 +14,7 @@
   "config.wynncraft-spell-caster.option.repeat-melee": "Repeat Melee Attacks",
   "config.wynncraft-spell-caster.option.left-interval-ms-tooltip": "Set the amount of milliseconds to wait after a left click.",
   "config.wynncraft-spell-caster.option.right-interval-ms-tooltip": "Set the amount of milliseconds to wait after a right click.",
-  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Repeat melee hits if the melee button stays pressed."
+  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Repeat melee hits if the melee button stays pressed.",
+  "config.wynncraft-spell-caster.option.hide-arrows": "Hide Arrows",
+  "config.wynncraft-spell-caster.option.hide-arrows-tooltip": "Make arrow entities invisible (client-side only)."
 }

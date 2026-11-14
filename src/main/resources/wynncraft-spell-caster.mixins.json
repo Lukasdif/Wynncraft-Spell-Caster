@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "asd.fred.wynncraft_spell_caster.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "HideArrowsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -14,5 +14,7 @@
   "config.wynncraft-spell-caster.option.repeat-melee": "Повтор Ударов Ближнего Боя",
   "config.wynncraft-spell-caster.option.left-interval-ms-tooltip": "Задает количество миллисекунд задержки после левого клика.",
   "config.wynncraft-spell-caster.option.right-interval-ms-tooltip": "Задает количество миллисекунд задержки после правого клика.",
-  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Повторяет удары ближнего боя, если кнопка атаки удерживается."
+  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Повторяет удары ближнего боя, если кнопка атаки удерживается.",
+  "config.wynncraft-spell-caster.option.hide-arrows": "Скрывать Стрелы",
+  "config.wynncraft-spell-caster.option.hide-arrows-tooltip": "Делает стрелы невидимыми (только на клиенте)."
 }
