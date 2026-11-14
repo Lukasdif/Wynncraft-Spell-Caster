@@ -84,6 +84,16 @@ public class Config {
                         .build()
         );
 
+        general.addEntry(entryBuilder.startBooleanToggle(
+                                Text.translatable("config.wynncraft-spell-caster.option.hide-arrows"),
+                                config_data.hide_arrows
+                        )
+                        .setDefaultValue(true)
+                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.hide-arrows-tooltip"))
+                        .setSaveConsumer(newValue -> config_data.hide_arrows = newValue)
+                        .build()
+        );
+
         builder.setSavingRunnable(config_data::save);
 
         return builder.build();
@@ -93,15 +103,22 @@ public class Config {
         public int left_interval_ms;
         public int right_interval_ms;
         public boolean repeat_melee;
+        public boolean hide_arrows;
 
-        public ConfigData(int left_interval_ms, int right_interval_ms, boolean repeat_melee) {
+        // Used by Gson so fields missing from older config files keep their defaults.
+        private ConfigData() {
+            this(100, 100, false, true);
+        }
+
+        public ConfigData(int left_interval_ms, int right_interval_ms, boolean repeat_melee, boolean hide_arrows) {
             this.left_interval_ms = left_interval_ms;
             this.right_interval_ms = right_interval_ms;
             this.repeat_melee = repeat_melee;
+            this.hide_arrows = hide_arrows;
         }
 
         public static ConfigData getDefault() {
-            return new ConfigData(100, 100, false);
+            return new ConfigData();
         }
 
         public void save() {

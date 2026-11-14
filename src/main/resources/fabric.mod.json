@@ -28,6 +28,9 @@
       "asd.fred.wynncraft_spell_caster.ModMenuConfig"
     ]
   },
+  "mixins": [
+    "wynncraft-spell-caster.mixins.json"
+  ],
 
   "depends": {
     "fabricloader": ">=0.14.17",
