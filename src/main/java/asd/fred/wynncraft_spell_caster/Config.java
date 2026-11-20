@@ -17,7 +17,7 @@ import java.nio.file.Paths;
 
 public class Config {
     private static final Path config_dir = Paths.get(MinecraftClient.getInstance().runDirectory.getPath() + "/config");
-    private static final Path config_file = Paths.get(config_dir + "/wynncraft-spell-caster.json");
+    private static final Path config_file = Paths.get(config_dir + "/scoobycaster.json");
     private static ConfigData config_data;
 
     public static ConfigData getConfigData() {
@@ -48,38 +48,48 @@ public class Config {
     }
 
     public static Screen createConfigScreen(Screen parent) {
-        ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(Text.translatable("screen.wynncraft-spell-caster.config.title"));
+        ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(Text.translatable("screen.scoobycaster.config.title"));
 
-        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("config.wynncraft-spell-caster.category.general"));
+        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("config.scoobycaster.category.general"));
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
         general.addEntry(entryBuilder.startIntField(
-                                Text.translatable("config.wynncraft-spell-caster.option.left-interval-ms"),
+                                Text.translatable("config.scoobycaster.option.left-interval-ms"),
                                 config_data.left_interval_ms
                         )
                         .setDefaultValue(100)
-                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.left-interval-ms-tooltip"))
+                        .setTooltip(Text.translatable("config.scoobycaster.option.left-interval-ms-tooltip"))
                         .setSaveConsumer(newValue -> config_data.left_interval_ms = newValue)
                         .build()
         );
 
         general.addEntry(entryBuilder.startIntField(
-                                Text.translatable("config.wynncraft-spell-caster.option.right-interval-ms"),
+                                Text.translatable("config.scoobycaster.option.right-interval-ms"),
                                 config_data.right_interval_ms
                         )
                         .setDefaultValue(100)
-                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.right-interval-ms-tooltip"))
+                        .setTooltip(Text.translatable("config.scoobycaster.option.right-interval-ms-tooltip"))
                         .setSaveConsumer(newValue -> config_data.right_interval_ms = newValue)
                         .build()
         );
 
+        general.addEntry(entryBuilder.startIntField(
+                                Text.translatable("config.scoobycaster.option.last-interval-ms"),
+                                config_data.last_interval_ms
+                        )
+                        .setDefaultValue(50)
+                        .setTooltip(Text.translatable("config.scoobycaster.option.last-interval-ms-tooltip"))
+                        .setSaveConsumer(newValue -> config_data.last_interval_ms = newValue)
+                        .build()
+        );
+
         general.addEntry(entryBuilder.startBooleanToggle(
-                                Text.translatable("config.wynncraft-spell-caster.option.repeat-melee"),
+                                Text.translatable("config.scoobycaster.option.repeat-melee"),
                                 config_data.repeat_melee
                         )
                         .setDefaultValue(false)
-                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.repeat-melee-tooltip"))
+                        .setTooltip(Text.translatable("config.scoobycaster.option.repeat-melee-tooltip"))
                         .setSaveConsumer(newValue -> config_data.repeat_melee = newValue)
                         .build()
         );
@@ -92,16 +102,18 @@ public class Config {
     public static class ConfigData {
         public int left_interval_ms;
         public int right_interval_ms;
+        public int last_interval_ms;
         public boolean repeat_melee;
 
-        public ConfigData(int left_interval_ms, int right_interval_ms, boolean repeat_melee) {
+        public ConfigData(int left_interval_ms, int right_interval_ms, int last_interval_ms, boolean repeat_melee) {
             this.left_interval_ms = left_interval_ms;
             this.right_interval_ms = right_interval_ms;
+            this.last_interval_ms = last_interval_ms;
             this.repeat_melee = repeat_melee;
         }
 
         public static ConfigData getDefault() {
-            return new ConfigData(100, 100, false);
+            return new ConfigData(100, 100, 50, false);
         }
 
         public void save() {

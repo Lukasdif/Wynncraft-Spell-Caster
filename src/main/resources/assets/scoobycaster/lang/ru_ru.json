@@ -1,0 +1,20 @@
+{
+  "key.category.scoobycaster.spell": "ScoobyCaster",
+  "key.scoobycaster.spell.first": "Использовать 1-е заклинание",
+  "key.scoobycaster.spell.second": "Использовать 2-е заклинание",
+  "key.scoobycaster.spell.third": "Использовать 3-е заклинание",
+  "key.scoobycaster.spell.fourth": "Использовать 4-е заклинание",
+  "key.scoobycaster.spell.melee": "Удар оружием ближнего боя",
+  "key.scoobycaster.config": "Открыть конфигурацию",
+
+  "screen.scoobycaster.config.title" : "ScoobyCaster Конфигурация",
+  "config.scoobycaster.category.general": "Общие настройки",
+  "config.scoobycaster.option.left-interval-ms": "Задержка Левого Клика [ms]",
+  "config.scoobycaster.option.right-interval-ms": "Задержка Правого Клика [ms]",
+  "config.scoobycaster.option.last-interval-ms": "Задержка после заклинания [ms]",
+  "config.scoobycaster.option.repeat-melee": "Повтор Ударов Ближнего Боя",
+  "config.scoobycaster.option.left-interval-ms-tooltip": "Задает количество миллисекунд задержки после левого клика.",
+  "config.scoobycaster.option.right-interval-ms-tooltip": "Задает количество миллисекунд задержки после правого клика.",
+  "config.scoobycaster.option.last-interval-ms-tooltip": "Задержка после последнего клика заклинания перед началом следующего.",
+  "config.scoobycaster.option.repeat-melee-tooltip": "Повторяет удары ближнего боя, если кнопка атаки удерживается."
+}
