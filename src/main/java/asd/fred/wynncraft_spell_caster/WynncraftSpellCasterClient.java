@@ -17,7 +17,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class WynncraftSpellCasterClient implements ClientModInitializer, ClientLifecycleEvents.ClientStarted, ClientLifecycleEvents.ClientStopping, ClientTickEvents.EndTick {
-    public static final Logger logger = LoggerFactory.getLogger("wynncraft-spell-caster");
+    public static final Logger logger = LoggerFactory.getLogger("scoobycaster");
     private static final List<Boolean> spell1_clicks = Arrays.asList(true, false, true);
     private static final List<Boolean> spell2_clicks = Arrays.asList(true, true, true);
     private static final List<Boolean> spell3_clicks = Arrays.asList(true, false, false);
@@ -69,15 +69,15 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     }
 
     private void registerKeybinds() {
-        KeyBinding.Category category = KeyBinding.Category.create(Identifier.of("wynncraft-spell-caster", "spell"));
+        KeyBinding.Category category = KeyBinding.Category.create(Identifier.of("scoobycaster", "spell"));
 
-        config_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.config", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        config_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.config", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
 
-        spell1_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.first", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
-        spell2_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.second", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
-        spell3_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.third", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
-        spell4_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.fourth", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
-        melee_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.melee", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        spell1_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.spell.first", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        spell2_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.spell.second", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        spell3_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.spell.third", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        spell4_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.spell.fourth", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
+        melee_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.scoobycaster.spell.melee", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, category));
     }
 
     private void checkSpellKey(KeyBinding spell_key, Collection<Boolean> spell_clicks, boolean repeatable) {

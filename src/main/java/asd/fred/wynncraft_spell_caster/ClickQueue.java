@@ -77,13 +77,18 @@ public class ClickQueue {
 
         private void execute_next_click(boolean next_click) throws InterruptedException {
             if (client.player != null) {
-                if (next_click ^ Utils.isArcher(client)) {
+                boolean right_click = next_click ^ Utils.isArcher(client);
+                if (right_click)
                     sendUsePacket();
-                    Thread.sleep(WynncraftSpellCasterClient.config_data.right_interval_ms);
-                } else {
+                else
                     sendAttackPacket();
+
+                if (queue.isEmpty())
+                    Thread.sleep(WynncraftSpellCasterClient.config_data.last_interval_ms);
+                else if (right_click)
+                    Thread.sleep(WynncraftSpellCasterClient.config_data.right_interval_ms);
+                else
                     Thread.sleep(WynncraftSpellCasterClient.config_data.left_interval_ms);
-                }
             }
         }
 

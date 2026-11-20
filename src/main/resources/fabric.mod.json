@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "wynncraft-spell-caster",
+  "id": "scoobycaster",
   "version": "${version}",
 
-  "name": "Wynncraft Spell Caster",
+  "name": "ScoobyCaster",
   "description": "A configurable spell macro mod for Wynncraft.",
   "authors": [
     "Frederik"
@@ -17,7 +17,7 @@
   },
 
   "license": "Unlicense",
-  "icon": "assets/wynncraft-spell-caster/icon.png",
+  "icon": "assets/scoobycaster/icon.png",
 
   "environment": "client",
   "entrypoints": {
